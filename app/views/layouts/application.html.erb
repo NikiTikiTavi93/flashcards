@@ -15,23 +15,26 @@
         <h1>Флэшкарточкер</h1>
         <ul class="nav nav-tabs">
           <li role="presentation"><a href="#">Все карточки</a></li>
-          <li role="presentation"><a href="#">Добавить карточку</a></li>
+          <li role="presentation">
+            <button type="button" class="btn btn-primary"
+                                          data-toggle="modal" data-target=".bs-example-modal-sm">Добавить карточку</button>
+
+            <div class="modal fade bs-example-modal-sm" tabindex="-1"
+                 role="dialog" aria-labelledby="mySmallModalLabel">
+              <div class="modal-dialog modal-sm" role="document">
+                <div class="modal-content">
+                  <p>Coming soon ...)</p>
+                </div>
+              </div>
+            </div>
+          </li>
+
         </ul>
       </header>
 
       <%= yield %>
 
-      <button type="button" class="btn btn-primary"
-              data-toggle="modal" data-target=".bs-example-modal-sm">Добавить карточку</button>
 
-      <div class="modal fade bs-example-modal-sm" tabindex="-1"
-           role="dialog" aria-labelledby="mySmallModalLabel">
-        <div class="modal-dialog modal-sm" role="document">
-          <div class="modal-content">
-            <p>Coming soon ...)</p>
-          </div>
-        </div>
-      </div>
     </section>
   </body>
 </html>
