@@ -12,9 +12,9 @@
     <section id="container">
 
       <header class="clearfix">
-        <h1>Флэшкарточкер</h1>
+        <h1><%= link_to "Флэшкарточкер", root_path %></h1>
         <ul class="nav nav-tabs">
-          <li role="presentation"><a href="#">Все карточки</a></li>
+          <li role="presentation"><%= link_to "Все карточки", cards_path %></li>
           <li role="presentation">
             <button type="button" class="btn btn-primary"
                                           data-toggle="modal" data-target=".bs-example-modal-sm">Добавить карточку</button>
