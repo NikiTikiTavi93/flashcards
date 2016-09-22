@@ -6,7 +6,7 @@
 config/database.yml
 config/secrets.yml
 config/overcommit.yml
-config/rubocop.yml
+#config/rubocop.yml
 .idea
 # Ignore bundler config.
 /.bundle
