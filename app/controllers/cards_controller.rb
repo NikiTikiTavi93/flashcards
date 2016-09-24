@@ -1,5 +1,5 @@
 class CardsController < ApplicationController
-
+  before_action :set_current_card, only: [:show, :edit, :update, :destroy]
   def new
     @card = Card.new
   end
@@ -18,15 +18,12 @@ class CardsController < ApplicationController
   end
 
   def show
-    @card = current_card
   end
 
   def edit
-    @card = current_card
   end
 
   def update
-    @card = current_card
     if @card.update(card_params)
       redirect_to cards_path
     else
@@ -35,14 +32,14 @@ class CardsController < ApplicationController
   end
 
   def destroy
-    @card = current_card
     @card.destroy
     redirect_to cards_path
   end
 
   private
-    def current_card
-      Card.find(params[:id])
+
+    def set_current_card
+      @card = Card.find(params[:id])
     end
 
     def card_params
