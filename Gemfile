@@ -6,6 +6,7 @@ gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 gem 'overcommit', '~> 0.36.0'
 gem 'rubocop', '~> 0.43.0'
 gem 'simple_form', '~> 3.3', '>= 3.3.1'
+gem 'nokogiri', '~> 1.6', '>= 1.6.8'
 # Use sqlite3 as the database for Active Record
 gem 'pg', '~> 0.18.4'
 # Use Puma as the app server
