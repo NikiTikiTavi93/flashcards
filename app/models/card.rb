@@ -11,6 +11,6 @@ class Card < ApplicationRecord
 
   def set_review_date
     date = 3.days.since
-    self.review_date = date
+    self[:review_date] = date
   end
 end
