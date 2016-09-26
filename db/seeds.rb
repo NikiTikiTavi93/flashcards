@@ -12,7 +12,8 @@ links.map do |link|
   word.css('tr').each do |td|
     begin
       puts Card.create!(original_text: td.css('td')[1].content,
-                   translated_text: td.css('td')[2].content)
+                   translated_text: td.css('td')[2].content,
+                   review_date: Time.zone.today)
     rescue ActiveRecord::RecordInvalid
     end
   end

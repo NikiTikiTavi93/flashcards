@@ -10,7 +10,7 @@ class Card < ApplicationRecord
   end
 
   def set_review_date
-    date = Time.zone.today +3.days.since
+    date = 3.days.since
     self.review_date = date
   end
 end
