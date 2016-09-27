@@ -1,7 +1,20 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+require 'open-uri'
+require 'nokogiri'
+require 'rubygems'
+require 'mechanize'
+
+agent = Mechanize.new
+PAGE_URL = "http://www.languagedaily.com/learn-german/vocabulary/common-german-words"
+page = agent.get(PAGE_URL)
+links = page.links_with(text: /Most.*/)
+links.map do |link|
+  word = link.click
+  word.css('tr').each do |td|
+    begin
+      puts Card.create!(original_text: td.css('td')[1].content,
+                   translated_text: td.css('td')[2].content)
+    rescue ActiveRecord::RecordInvalid
+    end
+  end
+end
+
