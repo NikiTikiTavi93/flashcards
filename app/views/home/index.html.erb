@@ -1,0 +1,19 @@
+<h1>Все карточки</h1>
+<% flash.each do |name, msg| -%>
+          <%= content_tag :div, msg, class: name %>
+        <% end -%>
+<% unless @card.nil?%>
+    <tr>
+      <%= form_tag(controller: "home", action: "check", method: "put") do |f| %>
+          <%= text_field_tag :original_text%>
+          <%= hidden_field_tag(:card_id, @card.id) %>
+          <%= @card.translated_text%>
+          <%= submit_tag%>
+      <% end %>
+    </tr>
+<% end %>
+
+
+
+
+
