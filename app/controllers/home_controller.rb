@@ -10,11 +10,7 @@ class HomeController < ApplicationController
   def check
    checked_card = CheckCard.call(card_id: params[:card_id],
                    original_text: params[:original_text])
-    if checked_card.success?
-      redirect_to root_path, notice: checked_card.correct_message
-    else
-      redirect_to root_path, notice:checked_card.incorrect_message
-    end
+   redirect_to root_path, notice: checked_card.message
   end
 
   private
