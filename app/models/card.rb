@@ -13,4 +13,8 @@ class Card < ApplicationRecord
     date = 3.days.from_now
     self.review_date = date
   end
+
+  def self.random_card
+      order("RANDOM()").limit(1).where("review_date <= ?", DateTime.now )
+  end
 end

@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
 
   def index
-    @card = Card.order("RANDOM()").limit(1).first
+    @card = Card.random_card.first
   end
 
   def show
@@ -9,14 +9,14 @@ class HomeController < ApplicationController
 
   def check
    checked_card = CheckCard.call(card_id: params[:card_id],
-                   original_text: params[:original_text])
+                   original_text: params[:original_text],
+                   review_date: params[:review_date])
     if checked_card.success?
-      flash[:notice] = "card success"
-      redirect_to new_card_path
+      flash[:info] = "Card correct"
     else
-      flash[:danger] = "Card incorrect"
-      redirect_to '/cards'
+      flash[:info] = "Card incorrect"
     end
+   redirect_to root_path
   end
 
   private
