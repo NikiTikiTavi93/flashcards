@@ -1,7 +1,7 @@
 <h1>Все карточки</h1>
 <% flash.each do |name, msg| -%>
-          <%= content_tag :div, msg, class: name %>
-        <% end -%>
+    <%= content_tag :div, msg, class: name %>
+<% end -%>
 <% unless @card.nil?%>
     <tr>
       <%= form_tag(controller: "home", action: "check", method: "put") do |f| %>
