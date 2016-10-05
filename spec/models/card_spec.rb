@@ -13,10 +13,8 @@ RSpec.describe Card, type: :model do
     end
 
     it "review_date" do
-      card = Card.new(original_text: '',translated_text: '',review_date: Time.zone.now)
-      card.set_review_date
-      card.save
-      expect(card.review_date == Time.zone.now + 3.days)
+      card = Card.create!(original_text: 'as',translated_text: 'da')
+      expect(card.review_date.strftime("%d")).to eq((Time.zone.now + 3.days).strftime("%d"))
     end
   end
 end
