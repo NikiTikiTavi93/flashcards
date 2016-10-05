@@ -14,4 +14,4 @@ test:
   database: flashcards_test
 before_script:
   - cp config/database.yml.travis config/database.yml
-  - psql -c 'create database flashcards_test;' -U admin
+  - psql -c 'create database flashcards_test;' -U postgres
