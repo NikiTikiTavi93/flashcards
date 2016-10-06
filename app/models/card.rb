@@ -1,4 +1,5 @@
 class Card < ApplicationRecord
+  belongs_to :user
   before_validation {original_text.downcase!}
   before_validation {translated_text.downcase!}
   before_create :set_review_date
