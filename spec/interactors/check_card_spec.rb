@@ -1,9 +1,10 @@
 require 'rails_helper'
 
 describe CheckCard do
+  let(:user) { FactoryGirl.create(:user) }
   before do
-    @card = FactoryGirl.create(:card)
-    @params = {card_params: {card_id: 1, original_text: 'tet'}}
+    @card = FactoryGirl.create(:card, user: user)
+    @params = { card_params: { card_id: 1, original_text: 'tet' } }
   end
 
   it ".call should create card and check equal original text" do

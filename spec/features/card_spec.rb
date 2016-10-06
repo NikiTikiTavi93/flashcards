@@ -1,7 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe 'home', type: :feature do
-  let(:card) { FactoryGirl.create(:card)}
+  let(:user) { FactoryGirl.create(:user) }
+  let(:card) { FactoryGirl.create(:card, user: user) }
   before do
     card.review_date = 10.days.ago
     card.save
