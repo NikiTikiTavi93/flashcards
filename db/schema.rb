@@ -29,7 +29,6 @@ ActiveRecord::Schema.define(version: 20161006152452) do
     t.string   "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "card_id"
   end
 
 end
