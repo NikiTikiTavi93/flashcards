@@ -6,6 +6,7 @@ class CardsController < ApplicationController
 
   def create
     @card = Card.new(card_params)
+    @card.user_id = current_user.id
     if @card.save
       redirect_to cards_path
     else
@@ -14,7 +15,11 @@ class CardsController < ApplicationController
   end
 
   def index
-    @cards = Card.all
+    if current_user
+      @cards = Card.all
+    else
+      redirect_to new_user_path
+    end
   end
 
   def show

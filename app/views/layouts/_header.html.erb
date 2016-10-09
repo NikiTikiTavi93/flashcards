@@ -2,6 +2,25 @@
   <h1><%= link_to "Флэшкарточкер", root_path %></h1>
   <ul class="nav nav-tabs">
     <li role="presentation"><%= link_to "Все карточки", cards_path %></li>
+    <% if current_user %>
     <li role="presentation"><%= link_to "Новая карточка", new_card_path %></li>
+        <li id="fat-menu" class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            Account <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu">
+            <li>Logged in as <%= current_user.email %></li>
+            <li><%= link_to "Settings", edit_user_path(current_user) %></li>
+            <li class="divider"></li>
+            <li>
+              <%= link_to "Log out", logout_path %>
+            </li>
+          </ul>
+        </li>
+    <% else %>
+        <li role="presentation"><%= link_to "Sign up", signup_path %></li>
+        <li role="presentation"><%= link_to "log in", login_path %></li>
+
+    <% end %>
   </ul>
 </header>
