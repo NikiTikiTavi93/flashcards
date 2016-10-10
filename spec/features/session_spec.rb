@@ -3,12 +3,13 @@ require 'support/login_helper'
 
 RSpec.describe 'Sessions', type: :feature do
   describe "login test" do
-    let(:user) { FactoryGirl.create(:user, email: "user@mail.ru", password: "qwe") }
     before do
-      login("user@mail.ru", "qwe")
+      @user = FactoryGirl.create(:user)
+      login(@user.email, @user.password)
     end
     it "login" do
       visit root_path
+      puts page.body
       expect(page).to have_content "Account"
   end
 
