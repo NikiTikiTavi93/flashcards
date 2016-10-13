@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
   before_action :find_user, only: [:update, :show, :edit]
+  skip_before_action :require_login, only: [:new]
+  before_action :set_current_user, only: [:edit, :update]
+
   def new
     @user = User.new
   end
@@ -29,6 +32,9 @@ class UsersController < ApplicationController
   end
 
   private
+    def set_current_user
+      @user = current_user
+    end
 
     def find_user
       @user = User.find(params[:id])

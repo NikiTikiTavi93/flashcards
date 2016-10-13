@@ -5,8 +5,7 @@ class Card < ApplicationRecord
   before_create :set_review_date
   validates :original_text, :translated_text, presence: true
   validate :original_text_not_equal_translated_text
-  scope :random_card, ->{where("review_date <= ?", DateTime.now ).order("RANDOM()").limit(1)}
-
+  scope :random_card, ->{ where("review_date <= ?", DateTime.now ).order("RANDOM()").limit(1) }
   def original_text_not_equal_translated_text
     errors.add(:original_text, "Original text not equal translated") if original_text == translated_text
   end

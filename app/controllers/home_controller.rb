@@ -1,11 +1,6 @@
 class HomeController < ApplicationController
-
   def index
-    if current_user
-      @card = Card.random_card.first
-    else
-      redirect_to new_user_path
-    end
+    @card = current_user.cards.random_card.first
   end
 
   def show

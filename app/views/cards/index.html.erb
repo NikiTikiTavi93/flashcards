@@ -8,7 +8,7 @@
   </tr>
 
   <% @cards.each do |card| %>
-      <tr><% if card.user_id == current_user.id %>
+      <tr>
         <td><%= card.original_text %></td>
         <td><%= card.translated_text %></td>
         <td><%= card.review_date.strftime("%d/%m/%Y") %></td>
@@ -19,5 +19,4 @@
                           data: { confirm: 'Are you sure?' } %></td>
           <% end %>
       </tr>
-  <% end %>
 </table>
