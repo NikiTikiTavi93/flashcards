@@ -20,7 +20,7 @@
     <% else %>
         <li role="presentation"><%= link_to "Sign up", signup_path %></li>
         <li role="presentation"><%= link_to "log in", login_path %></li>
-
+        <li role="presentation"><%= link_to 'Login with Twitter', auth_at_provider_path(:provider => :twitter) %></li>
     <% end %>
   </ul>
 </header>

@@ -10,6 +10,7 @@ gem 'mechanize', '~> 2.7', '>= 2.7.5'
 gem 'interactor', '~> 3.1'
 gem 'sorcery', '~> 0.9.1'
 
+
 gem 'nokogiri', '~> 1.6', '>= 1.6.8'
 # Use sqlite3 as the database for Active Record
 gem 'pg', '~> 0.18.4'

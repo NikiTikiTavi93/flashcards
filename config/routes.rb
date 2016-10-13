@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'oauths/oauth'
+
+  get 'oauths/callback'
+
   root "home#index"
   resources :cards
   resources :users
@@ -8,4 +12,7 @@ Rails.application.routes.draw do
   get "signup" => 'users#new', as: 'signup'
   post '/login' => 'sessions#new'
   post 'home/check' => 'home#check'
+  post 'oauth/callback' => 'oauths#callback'
+  get 'oauth/callbck' => 'oauths#callback'
+  get 'oauth/:provider' => 'oauths#oauth', as: :auth_at_provider
 end
