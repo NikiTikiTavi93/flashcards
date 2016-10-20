@@ -274,7 +274,7 @@ DEPENDENCIES
   byebug
   capybara
   coffee-rails (~> 4.2)
-  dotenv-rails (~> 2.1, >= 2.1.1)
+  dotenv-rails
   fabrication
   factory_girl_rails
   interactor (~> 3.1)

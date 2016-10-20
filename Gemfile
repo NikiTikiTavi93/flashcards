@@ -10,9 +10,9 @@ gem 'mechanize', '~> 2.7', '>= 2.7.5'
 gem 'interactor', '~> 3.1'
 gem 'sorcery', '~> 0.9.1'
 gem 'paperclip', '~> 5.0.0'
-gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
 gem 'nokogiri', '~> 1.6', '>= 1.6.8'
 gem 'aws-sdk'
+gem 'dotenv-rails', :require => 'dotenv/rails-now'
 # Use sqlite3 as the database for Active Record
 gem 'pg', '~> 0.18.4'
 # Use Puma as the app server
