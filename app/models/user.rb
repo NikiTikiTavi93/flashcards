@@ -7,7 +7,7 @@ class User < ApplicationRecord
   has_many :authentications, dependent: :destroy
   accepts_nested_attributes_for :authentications
   has_many :cards
-
+  has_many :decks
   before_save { email.downcase! }
 
   VALID_EMAIL = /\A[\w+\-.]+@[a-z\d\-.]+(\.[a-z]+)*\.[a-z]+\z/i

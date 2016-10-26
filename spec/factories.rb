@@ -1,4 +1,10 @@
 FactoryGirl.define do
+  factory :deck do
+    user_id "MyString"
+     1
+    card_id "MyString"
+     1
+  end
   factory :authentication do
 
   end

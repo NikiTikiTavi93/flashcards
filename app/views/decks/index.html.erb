@@ -1,0 +1,20 @@
+<h1>Все колоды</h1>
+<table class="table table-striped">
+  <tr>
+    <th>Original text</th>
+    <th>Translated text</th>
+    <th>Review date</th>
+  </tr>
+
+  <% @decks.each do |deck| %>
+      <tr>
+        <td><%= deck.name %></td>
+
+
+        <td><%= link_to "Редактировать колоды", edit_deck_path(deck) %></td>
+        <td><%= link_to "Удалить колоду", deck_path(deck.id),
+                        method: :delete,
+                        data: { confirm: 'Are you sure?' } %></td>
+  <% end %>
+  </tr>
+</table>
