@@ -1,9 +1,7 @@
 FactoryGirl.define do
   factory :deck do
-    user_id "MyString"
-     1
-    card_id "MyString"
-     1
+    name "deck"
+    active true
   end
   factory :authentication do
 

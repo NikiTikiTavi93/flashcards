@@ -6,6 +6,7 @@
 config/database.yml
 config/secrets.yml
 config/overcommit.yml
+public/system/cards/images
 #config/rubocop.yml
 .idea
 # Ignore bundler config.

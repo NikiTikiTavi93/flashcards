@@ -2,8 +2,9 @@ require 'rails_helper'
 
 describe CheckCard do
   let(:user) { FactoryGirl.create(:user) }
+  let(:deck) { FactoryGirl.create(:deck) }
   before do
-    @card = FactoryGirl.create(:card, user: user)
+    @card = FactoryGirl.create(:card, user: user, deck: deck)
     @params = { card_params: { card_id: 1, original_text: 'tet' } }
   end
 

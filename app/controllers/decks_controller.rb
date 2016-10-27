@@ -1,7 +1,6 @@
 class DecksController < ApplicationController
-
   before_action :set_current_deck, only: [:show, :edit, :update, :destroy]
-  before_action :current_user_deck
+  before_action :current_user_decks
 
   def index
   end
@@ -12,19 +11,14 @@ class DecksController < ApplicationController
   def new
     @deck = Deck.new
   end
-
   def create
     @deck = Deck.new(deck_params)
     @deck.user_id = current_user.id
+    check_active_deck
     if @deck.save
-      if @deck.active == true
-        @decks.update_all(active: false)
-        @deck.update(active: true)
-      end
-
       redirect_to decks_path, :notice => "New deck added"
     else
-      redirect_to new_deck_path, :notice =>"New deck doesn't create"
+      render :new
     end
   end
 
@@ -32,12 +26,14 @@ class DecksController < ApplicationController
   end
 
   def update
+    check_active_deck
     if @deck.update(deck_params)
+
       redirect_to decks_path
     else
       render 'edit'
     end
-    end
+  end
 
   def destroy
     @deck.destroy
@@ -46,8 +42,13 @@ class DecksController < ApplicationController
 
 
   private
+    def check_active_deck
+      if @deck.active == true
+        @decks.update_all(active: false)
+      end
+    end
 
-    def current_user_deck
+    def current_user_decks
       @decks = current_user.decks
     end
 

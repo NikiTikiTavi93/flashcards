@@ -1,7 +1,6 @@
 class HomeController < ApplicationController
   def index
-    random_card = GetRandomCard.call(user: current_user)
-    @card = random_card.card
+    @card = GetRandomCard.call(user: current_user).card
   end
 
   def show
