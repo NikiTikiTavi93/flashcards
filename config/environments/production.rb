@@ -83,4 +83,14 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+  config.paperclip_defaults = {
+      :storage => :s3,
+      :s3_host_name => 'https://console.aws.amazon.com/s3/home?region=us-east-1#&bucket=flashcardimages&prefix=',
+      :s3_credentials => {
+          :bucket => "flashcardimages",
+          :access_key_id => "AKIAJC27VPBZGOXDQIQQ",
+          :secret_access_key => "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",
+          :s3_region => "us-east-1"
+      }
+  }
 end

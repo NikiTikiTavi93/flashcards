@@ -1,4 +1,8 @@
 FactoryGirl.define do
+  factory :deck do
+    name "deck"
+    active true
+  end
   factory :authentication do
 
   end

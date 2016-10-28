@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def index
-    @card = current_user.cards.random_card.first
+    @card = GetRandomCard.call(user: current_user).card
   end
 
   def show
@@ -14,6 +14,10 @@ class HomeController < ApplicationController
 
   private
     def card_params
-      params.require(:card).permit(:original_text, :translated_text, :review_date)
+      params.require(:card).permit(:original_text, :translated_text, :review_date, :image)
+    end
+
+    def deck_params
+      params.require(:deck).permit(:user_id, :name, :active)
     end
 end

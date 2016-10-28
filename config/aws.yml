@@ -1,0 +1,8 @@
+development:
+  access_key_id: "AKIAJC27VPBZGOXDQIQQ"
+  secret_access_key: "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"
+
+production:
+  access_key_id: "AKIAJC27VPBZGOXDQIQQ"
+  secret_access_key: "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"
+
