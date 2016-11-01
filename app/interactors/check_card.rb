@@ -3,7 +3,7 @@ class CheckCard
 
   def call
     card = Card.find(context.card_id)
-    if card.original_text == context.original_text.gsub(/ /, '')
+    if card.original_text == context.original_text.delete(' ')
       correct_answer(card)
       context.message = 'Card correct'
     else
