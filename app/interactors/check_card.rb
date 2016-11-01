@@ -9,7 +9,6 @@ class CheckCard
     else
       incorrect_answer(card)
       context.message = 'Card incorrect'
-      context.fail!
     end
   end
 
