@@ -18,7 +18,7 @@ describe CheckCard do
     count = 0
     while count != 5
       card_checks = Card.find(@card.id).count_checks
-      interactor = CheckCard.call(card_id: @card.id, original_text: @card.original_text)
+      CheckCard.call(card_id: @card.id, original_text: @card.original_text)
       card_checks_after = Card.find(@card.id).count_checks
         if card_checks == 5
           expect(card_checks_after).to eq(card_checks)
@@ -33,9 +33,9 @@ describe CheckCard do
     count = 0
     while count !=3
       card_errors = Card.find(@card.id).count_errors
-      interactor = CheckCard.call(card_id: @card.id, original_text: 'wrong text')
+      CheckCard.call(card_id: @card.id, original_text: 'wrong text')
       card_errors_after = Card.find(@card.id).count_errors
-      if card_errors_after == 0
+      if card_errors_after.zero?
         expect(card_errors).to eq(2)
       else
         expect(card_errors_after).to eq(card_errors+1)
@@ -48,20 +48,20 @@ describe CheckCard do
     count_checks = 0
     while count_checks != 4
       card_checks = Card.find(@card.id).count_checks
-      interactor = CheckCard.call(card_id: @card.id, original_text: @card.original_text)
+      CheckCard.call(card_id: @card.id, original_text: @card.original_text)
       card_checks_after = Card.find(@card.id).count_checks
       expect(card_checks_after).to eq(card_checks+1)
       count_checks += 1
     end
     count_errors = 0
     while count_errors != 3
-      interactor = CheckCard.call(card_id: @card.id, original_text: 'wrong text')
+      CheckCard.call(card_id: @card.id, original_text: 'wrong text')
       card_errors_after = Card.find(@card.id).count_errors
       card_checks_after_error = Card.find(@card.id).count_checks
-      if card_errors_after == 0
+      if card_errors_after.zero?
         expect(card_checks_after_error).to eq(0)
       end
-      count_errors +=1
+      count_errors += 1
     end
   end
 end
