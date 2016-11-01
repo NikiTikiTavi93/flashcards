@@ -15,5 +15,7 @@ FactoryGirl.define do
     original_text "text"
     translated_text "trans_text"
     review_date {5.days.ago}
+    # count_checks 0
+    # count_errors 0
   end
 end

@@ -16,7 +16,7 @@ RSpec.describe Card, type: :model do
 
     it 'review_date' do
       card = Card.create!(original_text: 'as',translated_text: 'da', user: user, deck_id: deck.id)
-      expect(card.review_date.strftime("%d")).to eq((Time.zone.now + 3.days).strftime("%d"))
+      expect(card.review_date.strftime("%d")).to eq((Time.zone.now).strftime("%d"))
     end
     it 'have deck' do
       card = Card.new(original_text: 'text', translated_text: 'text', review_date: DateTime.now, deck_id: nil)
