@@ -3,7 +3,7 @@ engines:
     enabled: true
   config:
     languages:
-    - ruby
-    -javascript
+      - ruby
+      -javascript
 exclude_paths:
 - "app/assets/javascripts/bootstrap.js"
