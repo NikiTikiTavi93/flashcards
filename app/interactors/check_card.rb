@@ -4,12 +4,11 @@ class CheckCard
 
   def call
     card = Card.find(context.card_id)
-    dl = DamerauLevenshtein.distance("#{card.original_text}", " #{context.original_text.delete(' ')}")
     if card.original_text == context.original_text.delete(' ')
       correct_answer(card)
       context.message = 'Card correct'
-    elsif mistype?(dl)
-      context.message = "Card incorrect count errors #{dl}"
+    elsif mistype?(card)
+      context.message = "card incorrectly, you made a typing error, the correct answer #{card.original_text}"
     else
       incorrect_answer(card)
       context.message = 'Card incorrect'
@@ -39,7 +38,8 @@ class CheckCard
     end
   end
 
-  def mistype?(dl)
+  def mistype?(card)
+    dl = DamerauLevenshtein.distance("#{card.original_text}", " #{context.original_text.delete(' ')}")
     input_word = context.original_text.delete(' ')
     errors_percentage = dl / input_word.length
     if errors_percentage < 0.3
