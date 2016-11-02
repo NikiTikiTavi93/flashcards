@@ -6,4 +6,4 @@ engines:
       - ruby
       - javascript
 exclude_paths:
-- "app/assets/javascripts/bootstrap.js"
+  - "app/assets/"
