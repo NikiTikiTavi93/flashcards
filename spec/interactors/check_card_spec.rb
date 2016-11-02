@@ -33,7 +33,7 @@ describe CheckCard do
     count = 0
     while count !=3
       card_errors = Card.find(@card.id).count_errors
-      CheckCard.call(card_id: @card.id, original_text: 'wrong text')
+      CheckCard.call(card_id: @card.id, original_text: 'wrong')
       card_errors_after = Card.find(@card.id).count_errors
       if card_errors_after.zero?
         expect(card_errors).to eq(2)
@@ -55,7 +55,7 @@ describe CheckCard do
     end
     count_errors = 0
     while count_errors != 3
-      CheckCard.call(card_id: @card.id, original_text: 'wrong text')
+      CheckCard.call(card_id: @card.id, original_text: 'wrong')
       card_errors_after = Card.find(@card.id).count_errors
       card_checks_after_error = Card.find(@card.id).count_checks
       if card_errors_after.zero?
