@@ -1,9 +1,5 @@
-engines:
-  duplication:
-    enabled: true
-    config:
-      languages:
-      - ruby
-      - javascript
+languages:
+  Ruby: true
+  JavaScript: true
 exclude_paths:
-  "app/assets/javascripts/bootstrap.js"
+- "app/assets/**/*"
