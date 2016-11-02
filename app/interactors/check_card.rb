@@ -1,11 +1,14 @@
 class CheckCard
   include Interactor
+  require "damerau-levenshtein"
 
   def call
     card = Card.find(context.card_id)
     if card.original_text == context.original_text.delete(' ')
       correct_answer(card)
       context.message = 'Card correct'
+    elsif mistype(card)
+
     else
       incorrect_answer(card)
       context.message = 'Card incorrect'
@@ -33,5 +36,14 @@ class CheckCard
     if card.count_errors == 3
         card.update(count_checks: 0, review_date: DateTime.now, count_errors: 0)
     end
+  end
+
+  def mistype(card)
+    dl = DamerauLevenshtein.distance("#{card.original_text}", " #{context.original_text.delete(' ')}")
+    input_word = context.original_text.delete(' ')
+    errors_percentage = dl/input_word.length
+      if errors_percentage < 0.3
+        context.message = "Card incorrect count errors #{dl}"
+      end
   end
 end
