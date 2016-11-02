@@ -44,8 +44,8 @@ class CheckCard
     errors_percentage = dl / input_word.length
     if errors_percentage < 0.3
       return true
+    else
+      return false
     end
-  else
-    return false
   end
 end
