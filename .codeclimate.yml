@@ -4,6 +4,6 @@ engines:
   config:
     languages:
       - ruby
-      -javascript
+      - javascript
 exclude_paths:
 - "app/assets/javascripts/bootstrap.js"
