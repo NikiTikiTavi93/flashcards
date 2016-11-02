@@ -1,9 +1,11 @@
 engines:
   rubocop:
     enabled: true
-  config:
-    languages:
-      - ruby
-      - javascript
+  duplication:
+    	enabled: true
+    config:
+        languages:
+          - ruby
+          - javascript
 exclude_paths:
 - "app/assets/javascripts/bootstrap.js"
