@@ -1,9 +1,4 @@
-engines:
-  rubocop:
-    enabled: true
-  config:
-    languages:
-  - ruby
-  - javascript
+JavaScript: true
+Ruby: true
 exclude_paths:
 - "app/assets/javascripts/bootstrap.js"
