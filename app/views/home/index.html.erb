@@ -6,7 +6,7 @@
     <tr>
       <%= form_tag(controller: "home", action: "check", method: "put") do |f| %>
           <%= label :original_text, "Original text" %>
-          <%= text_field_tag :original_text %>
+          <%= text_field_tag :original_text  %>
           <%= hidden_field_tag(:card_id, @card.id) %>
           <%= @card.translated_text%>
           <%= image_tag @card.image.url(:medium) %>

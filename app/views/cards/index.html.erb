@@ -1,10 +1,12 @@
-<h1>Все карточки</h1>
+<h1><%= "#{t('all_cards.all_cards')}" %></h1>
 
 <table class="table table-striped">
   <tr>
-    <th>Original text</th>
-    <th>Translated text</th>
-    <th>Review date</th>
+    <th><%= "#{t('all_cards.original_text')}" %></th>
+    <th><%= "#{t('all_cards.translated_text')}" %></th>
+    <th><%= "#{t('all_cards.review_date')}" %></th>
+    <th><%= "#{t('all_cards.edit_card')}" %></th>
+    <th><%= "#{t('all_cards.delete_card')}" %></th>
   </tr>
 
   <% @cards.each do |card| %>
@@ -13,10 +15,10 @@
         <td><%= card.translated_text %></td>
         <td><%= card.review_date.strftime("%d/%m/%Y") %></td>
 
-          <td><%= link_to "Редактировать карточку", edit_card_path(card) %></td>
-          <td><%= link_to "Удалить карточку", card_path(card.id),
+          <td><%= link_to "#{t('all_cards.edit_card')}", edit_card_path(card) %></td>
+          <td><%= link_to "#{t('all_cards.delete_card')}", card_path(card.id),
                           method: :delete,
-                          data: { confirm: 'Are you sure?' } %></td>
+                          data: { confirm: "#{t('all_cards.confirm')}" } %></td>
           <% end %>
       </tr>
 </table>

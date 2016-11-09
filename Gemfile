@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
+gem 'i18n'
 gem 'overcommit', '~> 0.36.0'
 gem 'rubocop', '~> 0.43.0'
 gem 'simple_form', '~> 3.3', '>= 3.3.1'
@@ -15,6 +16,8 @@ gem 'aws-sdk'
 gem 'dotenv-rails', :require => 'dotenv/rails-now'
 gem 'damerau-levenshtein'
 gem 'whenever', require: false
+gem 'formtastic', '~> 3.0'
+gem 'formtastic-bootstrap'
 # Use sqlite3 as the database for Active Record
 gem 'pg', '~> 0.18.4'
 # Use Puma as the app server
