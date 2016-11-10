@@ -7,9 +7,10 @@ class HomeController < ApplicationController
   end
 
   def check
-   checked_card = CheckCard.call(card_id: params[:card_id],
-                   original_text: params[:original_text])
+   checked_card = CheckCard.call(card_id: params[:card][:id],
+                   original_text: params[:card][:original_text])
    redirect_to root_path, notice: checked_card.message
+
   end
 
   private

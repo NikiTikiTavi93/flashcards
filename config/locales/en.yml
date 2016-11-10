@@ -20,6 +20,15 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  formtastic:
+    labels:
+      card:
+        original_text: "Original Text"
+    hints:
+      card:
+        original_text: "Input your word"
+    actions:
+      update: "Check Card"
   app:
     hello: "Hello world"
     flashcards: "Flashcards"
