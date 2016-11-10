@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get "login" => 'sessions#new', as: 'login'
   get "signup" => 'users#new', as: 'signup'
   post '/login' => 'sessions#new'
+  patch 'home/check' => 'home#check'
   post 'home/check' => 'home#check'
   post 'oauth/callback' => 'oauths#callback'
   get 'oauth/callbck' => 'oauths#callback'
