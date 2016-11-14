@@ -9,7 +9,6 @@ class CardsController < ApplicationController
     @card = Card.new(card_params)
     @card.user_id = current_user.id
     if @card.save
-      byebug
       redirect_to cards_path
     else
       redirect_to new_card_path

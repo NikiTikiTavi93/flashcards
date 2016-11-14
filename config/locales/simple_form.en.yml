@@ -13,9 +13,7 @@ en:
     user:
       email: "Email"
       password: "Password"
-      password_confirm: "Password_confirm"
-    session:
-      email: "ololo"
+      password_confirmation: "Password_confirm"
   helpers:
     submit:
       card:
@@ -23,5 +21,8 @@ en:
         update: "Update %{model}"
       deck:
         create: "Create %{model}"
+        update: "Save changes"
       user:
-        create: "Create %{model}"
+        create: "Registration"
+        update: "Save changes"
+        log_in: "Log in"

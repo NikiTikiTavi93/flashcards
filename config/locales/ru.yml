@@ -1,0 +1,68 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+ru:
+  formtastic:
+    labels:
+      card:
+        original_text: "Оригинальный текст"
+    hints:
+      card:
+        original_text: "Введите ваше слово"
+    actions:
+      update: "Проверить карточку"
+  app:
+    flashcards: "Флэшкарточкер"
+    all_cards: "Все карточки"
+    new_card: "Новая карточка"
+    new_deck: "Новая колода"
+    all_decks: "Все колоды"
+    settings: "Настройки"
+    log_out: "Выйти"
+    sign_in: "Регистрация"
+    log_in: "Войти"
+    oauth_login: "Войти из твиттера"
+    account: "Аккаунт"
+    logged: "Пользователь "
+  all_cards:
+    all_cards: "Все карточки"
+    original_text: "Оригинальный текст"
+    translated_text: "Текст перевода"
+    review_date: "Дата проверки"
+    edit_card: "Редактировать карточку"
+    delete_card: "Удалить карточку "
+    confirm: "Вы уверены?"
+  all_decks:
+      all_decks: "Все колоды"
+      name: "Имя"
+      active: "Активность"
+      edit_deck: "Редактирование колоды"
+      delete_deck: "Удалить колоду"
+      confirm: "Вы уверены?"
+  card:
+    new_card: "Новая карточка"
+    edit_card: "Редактировать карточку"
+  deck:
+    new_deck: "Новая колода"
+    edit_card: "Редактирование колоды"
+  user:
+    reg: "Регистрация"
+    edit: "Редактировать пользователя"

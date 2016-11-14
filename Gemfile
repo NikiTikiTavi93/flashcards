@@ -18,6 +18,8 @@ gem 'damerau-levenshtein'
 gem 'whenever', require: false
 gem 'formtastic', '~> 3.0'
 gem 'formtastic-bootstrap'
+gem 'http_accept_language'
+gem 'rails-i18n', '~> 5.0.0'
 # Use sqlite3 as the database for Active Record
 gem 'pg', '~> 0.18.4'
 # Use Puma as the app server

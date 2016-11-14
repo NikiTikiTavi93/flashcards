@@ -51,9 +51,19 @@ en:
     edit_card: "Edit card"
     delete_card: "Delete card"
     confirm: "Are you sure?"
+  all_decks:
+      all_decks: "All decks"
+      name: "Name"
+      active: "Active"
+      edit_deck: "Edit deck"
+      delete_deck: "Delete deck"
+      confirm: "Are you sure?"
   card:
     new_card: "New card"
     edit_card: "Edit card"
+  deck:
+    new_deck: "New deck"
+    edit_card: "Edit deck"
   user:
     reg: "Registration"
     edit: "Edit user"
