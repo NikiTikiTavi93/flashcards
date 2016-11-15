@@ -10,8 +10,7 @@ RSpec.describe 'Sessions', type: :feature do
     describe "login test" do
       it "login" do
         visit root_path
-        puts @user.email, @user.password
-        expect(page).to have_content "Account"
+        expect(page).to have_content I18n.t('app.account')
       end
   end
 end

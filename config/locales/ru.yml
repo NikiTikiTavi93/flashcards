@@ -30,6 +30,7 @@ ru:
     actions:
       update: "Проверить карточку"
   app:
+    switch: "Переключить на Русский"
     flashcards: "Флэшкарточкер"
     all_cards: "Все карточки"
     new_card: "Новая карточка"

@@ -4,21 +4,14 @@ Rails.application.routes.draw do
   get 'oauths/callback'
 
   root "home#index"
+
   scope "/:locale" do
     resources :cards
-  end
-  scope "/:locale" do
     resources :users
-  end
-  scope "/:locale" do
     resources :sessions
-  end
-  scope "/:locale" do
-
-  end
-  scope "/:locale" do
     resources :decks
   end
+
   get "logout" => 'sessions#destroy', as: 'logout'
   get "login" => 'sessions#new', as: 'login'
   get "signup" => 'users#new', as: 'signup'

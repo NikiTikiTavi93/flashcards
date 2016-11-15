@@ -13,9 +13,7 @@ RSpec.describe 'home', type: :feature do
   end
   it "have text" do
     visit root_path
-    puts @user.id
-    puts @deck.user_id
-    fill_in :original_text, with: @card.original_text
+    fill_in :card_original_text, with: @card.original_text
     click_button "Проверить"
     expect(page).to have_content "Card correct"
   end

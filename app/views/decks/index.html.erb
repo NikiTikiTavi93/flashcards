@@ -1,10 +1,10 @@
-<h1><%= "#{t('all_decks.all_decks')}" %></h1>
+<h1><%= t('all_decks.all_decks') %></h1>
 <table class="table table-striped">
   <tr>
-    <th><%= "#{t('all_decks.name')}" %></th>
-    <th><%= "#{t('all_decks.active')}" %></th>
-    <th><%= "#{t('all_decks.edit_deck')}" %></th>
-    <th><%= "#{t('all_decks.delete_deck')}" %></th>
+    <th><%= t('all_decks.name') %></th>
+    <th><%= t('all_decks.active') %></th>
+    <th><%= t('all_decks.edit_deck') %></th>
+    <th><%= t('all_decks.delete_deck') %></th>
   </tr>
 
   <% @decks.each do |deck| %>
@@ -12,10 +12,10 @@
         <td><%= deck.name %></td>
         <td><%= deck.active %></td>
 
-        <td><%= link_to "#{t('all_decks.edit_deck')}", edit_deck_path(deck) %></td>
-        <td><%= link_to "#{t('all_decks.delete_deck')}", deck_path(deck.id),
+        <td><%= link_to t('all_decks.edit_deck'), edit_deck_path(deck) %></td>
+        <td><%= link_to t('all_decks.delete_deck'), deck_path(deck.id),
                         method: :delete,
-                        data: { confirm: "#{t('all_decks.confirm')}" } %></td>
+                        data: { confirm: t('all_decks.confirm') } %></td>
   <% end %>
   </tr>
 </table>

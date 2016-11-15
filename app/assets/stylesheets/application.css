@@ -12,4 +12,11 @@
  *
  *= require_tree .
  *= require_self
- /**= require formtastic-bootstrap*/
+ */
+.hidden {
+    display: none;
+}
+
+.alert.alert-error > ul.error-list {
+    margin-bottom: 0px;
+}
