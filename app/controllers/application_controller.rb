@@ -4,9 +4,9 @@ class ApplicationController < ActionController::Base
   before_action :set_locale
 
   def set_locale
-    I18n.locale = current_user.try(:locale) || I18n.default_locale
+    #I18n.locale = current_user.try(:locale) || I18n.default_locale
     I18n.locale = http_accept_language.compatible_language_from(I18n.available_locales)
-
+    I18n.locale = params[:locale] || I18n.default_locale
   end
 
   def default_url_options

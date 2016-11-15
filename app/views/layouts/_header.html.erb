@@ -26,5 +26,12 @@
         <li role="presentation"><%= link_to "#{t('app.log_in')}", login_path %></li>
         <li role="presentation"><%= link_to "#{t('app.oauth_login')}", auth_at_provider_path(:provider => :twitter) %></li>
     <% end %>
+        <li role="presentation">
+          <% if I18n.locale == I18n.default_locale %>
+              <%= link_to "Switch English", locale: 'en' %>
+          <% else %>
+              <%= link_to "Switch Russian", locale: 'ru' %>
+          <% end %>
+        </li>
   </ul>
 </header>
