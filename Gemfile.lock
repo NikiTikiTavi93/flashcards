@@ -92,10 +92,15 @@ GEM
     faraday (0.9.2)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.14)
+    formtastic (3.1.4)
+      actionpack (>= 3.2.13)
+    formtastic-bootstrap (3.1.1)
+      formtastic (>= 3.0)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
+    http_accept_language (2.1.0)
     i18n (0.7.0)
     iniparse (1.4.2)
     interactor (3.1.0)
@@ -181,6 +186,9 @@ GEM
       nokogiri (~> 1.6.0)
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
+    rails-i18n (5.0.1)
+      i18n (~> 0.7)
+      railties (~> 5.0)
     railties (5.0.0.1)
       actionpack (= 5.0.0.1)
       activesupport (= 5.0.0.1)
@@ -282,6 +290,10 @@ DEPENDENCIES
   dotenv-rails
   fabrication
   factory_girl_rails
+  formtastic (~> 3.0)
+  formtastic-bootstrap
+  http_accept_language
+  i18n
   interactor (~> 3.1)
   jbuilder (~> 2.5)
   jquery-rails
@@ -293,7 +305,8 @@ DEPENDENCIES
   pg (~> 0.18.4)
   puma (~> 3.0)
   rails (~> 5.0.0, >= 5.0.0.1)
-  rspec-rails (~> 3.5)
+  rails-i18n (~> 5.0.0)
+  rspec-rails (~> 3.5.0)
   rubocop (~> 0.43.0)
   sass-rails (~> 5.0)
   simple_form (~> 3.3, >= 3.3.1)

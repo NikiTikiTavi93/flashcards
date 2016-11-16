@@ -10,6 +10,7 @@ FactoryGirl.define do
     sequence(:email) { |n| "test#{n}@example.com" }
     password "qwerty"
     password_confirmation { password }
+    locale "en"
   end
   factory :card do
     original_text "text"

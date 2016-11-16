@@ -1,0 +1,29 @@
+ru:
+  simple_form:
+   labels:
+    card:
+      original_text: "Оригинальный текст"
+      translated_text: "Переведенный текст"
+      review_date: "Дата Ревью"
+      deck: "Колода"
+      image: "Изображение"
+    deck:
+      name: "Имя колоды"
+      active: "Активность"
+    user:
+      email: "Email"
+      password: "Пароль"
+      password_confirmation: "Подтверждение пароля"
+      locale: "Язык"
+  helpers:
+    submit:
+      card:
+        create: "Создать карточку "
+        update: "Изменить карточку"
+      deck:
+        create: "Создать колоду"
+        update: "Изменить колоду"
+      user:
+        create: "Регистрация"
+        update: "Сохранить изменения"
+        log_in: "Войти"

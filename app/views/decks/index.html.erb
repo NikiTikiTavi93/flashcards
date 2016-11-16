@@ -1,20 +1,21 @@
-<h1>Все колоды</h1>
+<h1><%= t('all_decks.all_decks') %></h1>
 <table class="table table-striped">
   <tr>
-    <th>Original text</th>
-    <th>Translated text</th>
-    <th>Review date</th>
+    <th><%= t('all_decks.name') %></th>
+    <th><%= t('all_decks.active') %></th>
+    <th><%= t('all_decks.edit_deck') %></th>
+    <th><%= t('all_decks.delete_deck') %></th>
   </tr>
 
   <% @decks.each do |deck| %>
       <tr>
         <td><%= deck.name %></td>
+        <td><%= deck.active %></td>
 
-
-        <td><%= link_to "Редактировать колоды", edit_deck_path(deck) %></td>
-        <td><%= link_to "Удалить колоду", deck_path(deck.id),
+        <td><%= link_to t('all_decks.edit_deck'), edit_deck_path(deck) %></td>
+        <td><%= link_to t('all_decks.delete_deck'), deck_path(deck.id),
                         method: :delete,
-                        data: { confirm: 'Are you sure?' } %></td>
+                        data: { confirm: t('all_decks.confirm') } %></td>
   <% end %>
   </tr>
 </table>

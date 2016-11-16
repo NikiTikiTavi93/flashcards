@@ -20,4 +20,50 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  formtastic:
+    labels:
+      card:
+        original_text: "Original Text"
+    hints:
+      card:
+        original_text: "Input your word"
+    actions:
+      update: "Check Card"
+  app:
+    switch: "Switch Russian"
+    flashcards: "Flashcards"
+    all_cards: "All cards"
+    new_card: "New card"
+    new_deck: "New deck"
+    all_decks: "All Deck"
+    settings: "Settings"
+    log_out: "Log out"
+    sign_in: "Sign in"
+    log_in: "Log in"
+    oauth_login: "Twitter Login"
+    account: "Account"
+    logged: "Logged in as"
+  all_cards:
+    all_cards: "All cards"
+    original_text: "Original text"
+    translated_text: "Translated text"
+    review_date: "Review date"
+    edit_card: "Edit card"
+    delete_card: "Delete card"
+    confirm: "Are you sure?"
+  all_decks:
+      all_decks: "All decks"
+      name: "Name"
+      active: "Active"
+      edit_deck: "Edit deck"
+      delete_deck: "Delete deck"
+      confirm: "Are you sure?"
+  card:
+    new_card: "New card"
+    edit_card: "Edit card"
+  deck:
+    new_deck: "New deck"
+    edit_card: "Edit deck"
+  user:
+    reg: "Registration"
+    edit: "Edit user"
