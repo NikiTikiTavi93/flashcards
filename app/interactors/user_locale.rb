@@ -8,10 +8,10 @@ class UserLocale
     session = context.session
     I18n.locale = if user
       user.locale
-      elsif params[:locale]
-        session[:locale] = params[:locale]
-      elsif session[:locale]
-        session[:locale]
+      elsif params
+        session = params
+      elsif session
+        session
       else
         http_accept_language.compatible_language_from(I18n.available_locales)
       end

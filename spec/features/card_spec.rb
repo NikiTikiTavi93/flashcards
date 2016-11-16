@@ -14,7 +14,7 @@ RSpec.describe 'home', type: :feature do
   it "have text" do
     visit root_path
     fill_in :card_original_text, with: @card.original_text
-    click_button "Проверить"
+    click_button I18n.t('formtastic.actions.update')
     expect(page).to have_content "Card correct"
   end
 end

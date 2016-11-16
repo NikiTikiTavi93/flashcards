@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   before_action :set_locale
 
   def set_locale
-    UserLocale.call(session: session, params:params, user: current_user,
+    UserLocale.call(session: session[:locale], params: params[:locale], user: current_user,
                                   http_accept_language: http_accept_language)
   end
 
