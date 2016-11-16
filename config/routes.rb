@@ -3,9 +3,10 @@ Rails.application.routes.draw do
 
   get 'oauths/callback'
 
-  root "home#index"
 
+  root "home#index"
   scope "/:locale" do
+
     resources :cards
     resources :users
     resources :sessions

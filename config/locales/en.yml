@@ -30,7 +30,7 @@ en:
     actions:
       update: "Check Card"
   app:
-    switch: "Switch English"
+    switch: "Switch Russian"
     flashcards: "Flashcards"
     all_cards: "All cards"
     new_card: "New card"
