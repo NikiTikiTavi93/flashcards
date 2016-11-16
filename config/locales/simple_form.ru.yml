@@ -14,6 +14,7 @@ ru:
       email: "Email"
       password: "Пароль"
       password_confirmation: "Подтверждение пароля"
+      locale: "Язык"
   helpers:
     submit:
       card:

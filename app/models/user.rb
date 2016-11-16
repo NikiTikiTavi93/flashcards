@@ -17,5 +17,5 @@ class User < ApplicationRecord
   validates :password, confirmation: true
   validates :password, length: { minimum:6 }
   validates :password_confirmation, presence: true
-  enum locale: %w(ru en)
+
 end

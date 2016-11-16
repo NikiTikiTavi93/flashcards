@@ -22,7 +22,7 @@
       <%= f.password_field :password_confirmation %>
     </div>
     <div>
-      <%= f.input :locale, as: :select, collection: User.locales.keys %>
+      <%= f.input :locale, as: :select, collection: I18n.available_locales %>
     </div>
     <div class="actions"><%= f.submit %></div>
 <% end %>
