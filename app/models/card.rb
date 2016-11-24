@@ -7,8 +7,6 @@ class Card < ApplicationRecord
   validates :original_text, :translated_text, presence: true
   validate :original_text_not_equal_translated_text
   validates_presence_of :deck_id
-  validates :count_errors, numericality: {only_integer: true, greater_then: 0, less_than_or_equal_to: 3}
-  validates :count_checks, numericality: {only_integer: true, greater_then: 0, less_than_or_equal_to: 5}
   scope :random_card, ->{ where("review_date <= ?", DateTime.now ).order("RANDOM()").limit(1) }
   has_attached_file :image,
                     styles: {medium: "360x360"}
