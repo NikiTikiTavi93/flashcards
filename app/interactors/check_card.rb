@@ -9,7 +9,7 @@ class CheckCard
       context.message = 'Card correct'
     elsif mistype?
       efactor_for_mistype
-      context.message = "card incorrectly, you made a typing error, the correct answer #{card.original_text}"
+      context.message = "card incorrectly, you made a typing error, the correct answer #{context.card.original_text}"
     else
       efactor_for_error
       context.message = 'Card incorrect'

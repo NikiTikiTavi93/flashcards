@@ -14,54 +14,43 @@ describe CheckCard do
     expect(interactor.original_text).to eq(@card.original_text)
   end
 
-  it "check how work count_checks " do
-    count = 0
-    while count != 5
-      card_checks = Card.find(@card.id).count_checks
-      CheckCard.call(card_id: @card.id, original_text: @card.original_text)
-      card_checks_after = Card.find(@card.id).count_checks
-        if card_checks == 5
-          expect(card_checks_after).to eq(card_checks)
-        else
-          expect(card_checks_after).to eq(card_checks+1)
-        end
-      count += 1
-    end
+  it "check for correct" do
+    efactor = Card.find(@card.id).efactor
+    counter = Card.find(@card.id).counter
+    review_date = Card.find(@card.id).review_date
+    CheckCard.call(card_id: @card.id, original_text: @card.original_text)
+    after_efactor = Card.find(@card.id).efactor
+    after_counter = Card.find(@card.id).counter
+    after_review_date = Card.find(@card.id).review_date
+    efactor = (efactor + (0.1 - (5-5)*(0.08+(5-5)*0.02)))
+    expect(efactor).to eq(after_efactor)
+    expect(after_counter).to eq(counter+1)
+    expect(after_review_date.strftime("%d")).to eq((review_date + 1.day).strftime("%d"))
   end
 
-  it "check how work count_errors" do
-    count = 0
-    while count !=3
-      card_errors = Card.find(@card.id).count_errors
-      CheckCard.call(card_id: @card.id, original_text: 'wrong')
-      card_errors_after = Card.find(@card.id).count_errors
-      if card_errors_after.zero?
-        expect(card_errors).to eq(2)
-      else
-        expect(card_errors_after).to eq(card_errors+1)
-      end
-      count += 1
-    end
+  it "check for mistype" do
+    efactor = Card.find(@card.id).efactor
+    counter = Card.find(@card.id).counter
+    review_date = Card.find(@card.id).review_date
+    CheckCard.call(card_id: @card.id, original_text: 'texd')
+    after_efactor = Card.find(@card.id).efactor
+    after_counter = Card.find(@card.id).counter
+    after_review_date = Card.find(@card.id).review_date
+    efactor = (efactor + (0.1 - (5-3)*(0.08+(5-3)*0.02)))
+    expect(efactor).to eq(after_efactor)
+    expect(after_counter).to eq(counter+1)
+    expect(after_review_date.strftime("%d")).to eq((review_date + 1.day).strftime("%d"))
   end
-
-  it "reset count_checks" do
-    count_checks = 0
-    while count_checks != 4
-      card_checks = Card.find(@card.id).count_checks
-      CheckCard.call(card_id: @card.id, original_text: @card.original_text)
-      card_checks_after = Card.find(@card.id).count_checks
-      expect(card_checks_after).to eq(card_checks+1)
-      count_checks += 1
-    end
-    count_errors = 0
-    while count_errors != 3
-      CheckCard.call(card_id: @card.id, original_text: 'wrong')
-      card_errors_after = Card.find(@card.id).count_errors
-      card_checks_after_error = Card.find(@card.id).count_checks
-      if card_errors_after.zero?
-        expect(card_checks_after_error).to eq(0)
-      end
-      count_errors += 1
-    end
+  it "check for error" do
+    efactor = Card.find(@card.id).efactor
+    counter = Card.find(@card.id).counter
+    review_date = Card.find(@card.id).review_date
+    CheckCard.call(card_id: @card.id, original_text: 'wrong')
+    after_efactor = Card.find(@card.id).efactor
+    after_counter = Card.find(@card.id).counter
+    after_review_date = Card.find(@card.id).review_date
+    expect(efactor).to eq(after_efactor)
+    expect(after_counter).to eq(counter)
+    expect(after_review_date.strftime("%d")).to eq((review_date).strftime("%d"))
   end
 end
