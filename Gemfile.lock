@@ -141,6 +141,7 @@ GEM
     multipart-post (2.0.0)
     net-http-digest_auth (1.4)
     net-http-persistent (2.9.4)
+    newrelic_rpm (3.17.1.326)
     nio4r (1.2.1)
     nokogiri (1.6.8.1)
       mini_portile2 (~> 2.1.0)
@@ -301,6 +302,7 @@ DEPENDENCIES
   jquery-rails
   listen (~> 3.0.5)
   mechanize (~> 2.7, >= 2.7.5)
+  newrelic_rpm
   nokogiri (~> 1.6, >= 1.6.8)
   overcommit (~> 0.36.0)
   paperclip (~> 5.0.0)
