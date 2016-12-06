@@ -96,6 +96,9 @@ GEM
       actionpack (>= 3.2.13)
     formtastic-bootstrap (3.1.1)
       formtastic (>= 3.0)
+    gibbon (2.2.4)
+      faraday (>= 0.9.1)
+      multi_json (>= 1.11.0)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     http-cookie (1.0.3)
@@ -295,6 +298,7 @@ DEPENDENCIES
   factory_girl_rails
   formtastic (~> 3.0)
   formtastic-bootstrap
+  gibbon
   http_accept_language
   i18n
   interactor (~> 3.1)
