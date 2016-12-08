@@ -20,6 +20,9 @@ gem 'formtastic', '~> 3.0'
 gem 'formtastic-bootstrap'
 gem 'http_accept_language'
 gem 'rails-i18n', '~> 5.0.0'
+gem 'rollbar'
+gem 'newrelic_rpm'
+gem 'mandrill-api'
 # Use sqlite3 as the database for Active Record
 gem 'pg', '~> 0.18.4'
 # Use Puma as the app server
