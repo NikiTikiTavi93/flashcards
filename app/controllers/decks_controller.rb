@@ -16,7 +16,7 @@ class DecksController < ApplicationController
     @deck.user_id = current_user.id
     check_active_deck
     if @deck.save
-      redirect_to decks_path, :notice => "New deck added"
+      redirect_to decks_path, :notice => t('flash_messages.deck.new_deck')
     else
       render :new
     end
@@ -29,7 +29,7 @@ class DecksController < ApplicationController
     check_active_deck
     if @deck.update(deck_params)
 
-      redirect_to decks_path
+      redirect_to decks_path, :notice => t('flash_messages.deck.update_deck')
     else
       render 'edit'
     end
@@ -37,7 +37,7 @@ class DecksController < ApplicationController
 
   def destroy
     @deck.destroy
-    redirect_to decks_path
+    redirect_to decks_path, :notice => t('flash_messages.deck.del_deck')
   end
 
 

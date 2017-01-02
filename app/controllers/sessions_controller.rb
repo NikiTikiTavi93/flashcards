@@ -7,15 +7,15 @@ class SessionsController < ApplicationController
   def create
     @user =login(user_params[:email], user_params[:password], user_params[:remember_me])
     if @user
-      redirect_to root_path, :notice => "Logged in!"
+      redirect_to root_path, :notice => t('flash_messages.session.login')+ " #{@user.email}"
     else
-      redirect_to login_path, :notice =>"Email or password incorrect"
+      redirect_to login_path, :notice => t('flash_messages.session.error')
     end
   end
 
   def destroy
     logout
-    redirect_to root_path, :notice => "Logged out"
+    redirect_to root_path, :notice => t('flash_messages.session.logout')
   end
   private
     def user_params

@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
 
   private
     def not_authenticated
-      redirect_to login_path, notice: "Please login first"
+      redirect_to login_path, notice: t('flash_messages.user.not_auth')
     end
 
 end

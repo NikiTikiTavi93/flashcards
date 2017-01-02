@@ -8,14 +8,15 @@ class HomeController < ApplicationController
 
   def check
    checked_card = CheckCard.call(card_id: params[:card][:id],
-                   original_text: params[:card][:original_text])
+                   original_text: params[:card][:original_text],
+                   timer: params[:card][:timer])
    redirect_to root_path, notice: checked_card.message
 
   end
 
   private
     def card_params
-      params.require(:card).permit(:original_text, :translated_text, :review_date, :image)
+      params.require(:card).permit(:original_text, :translated_text, :review_date, :image,:timer)
     end
 
     def deck_params

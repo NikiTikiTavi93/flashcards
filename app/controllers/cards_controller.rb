@@ -9,9 +9,9 @@ class CardsController < ApplicationController
     @card = Card.new(card_params)
     @card.user_id = current_user.id
     if @card.save
-      redirect_to cards_path
+      redirect_to cards_path, :notice => t('flash_messages.card.new_card')
     else
-      redirect_to new_card_path
+      redirect_to new_card_path,:notice => t('flash_messages.card.error_card')
     end
   end
 
@@ -26,7 +26,7 @@ class CardsController < ApplicationController
 
   def update
     if @card.update(card_params)
-      redirect_to cards_path
+      redirect_to cards_path, :notice => t('flash_messages.card.update_card')
     else
       render 'edit'
     end
@@ -34,7 +34,7 @@ class CardsController < ApplicationController
 
   def destroy
     @card.destroy
-    redirect_to cards_path
+    redirect_to cards_path, :notice => t('flash_messages.card.del_card')
   end
 
   private

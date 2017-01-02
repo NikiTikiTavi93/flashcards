@@ -3,16 +3,21 @@ class CheckCard
   require 'damerau-levenshtein'
 
   def call
+    timer = context.timer.to_i
+
     context.card = Card.find(context.card_id)
     if context.card.original_text == context.original_text.delete(' ')
       efactor_for_correct
-      context.message = 'Card correct'
+
+      if timer >=5
+        context.message = I18n.t('flash_messages.card.correct_card')+"ДОЛГО ЕПТА"
+      end
     elsif mistype?
       efactor_for_mistype
-      context.message = "card incorrectly, you made a typing error, the correct answer #{context.card.original_text}"
+      context.message = "#{I18n.t('flash_messages.card.mistype_card')} #{context.card.original_text}"
     else
       efactor_for_error
-      context.message = 'Card incorrect'
+      context.message = I18n.t('flash_messages.card.error_card')
     end
   end
 
@@ -20,11 +25,15 @@ class CheckCard
   def mistype?
     dl = DamerauLevenshtein.distance("#{context.card.original_text}", " #{context.original_text.delete(' ')}")
     input_word = context.original_text.delete(' ')
-    errors_percentage = dl / input_word.length
-    if errors_percentage < 0.3
-      return true
-    else
+    if input_word.blank?
       return false
+    else
+      errors_percentage = dl / input_word.length
+      if errors_percentage < 0.3
+        return true
+      else
+        return false
+      end
     end
   end
 

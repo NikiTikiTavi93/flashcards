@@ -67,3 +67,24 @@ en:
   user:
     reg: "Registration"
     edit: "Edit user"
+    sign_in: "Sign in"
+    new_user_error: "Error!"
+  flash_messages:
+    session:
+      login: "Welcome #{@user.email}"
+      error: "Email or password incorrect"
+      logout: "Logged out"
+    deck:
+      new_deck: "New deck added"
+      update_deck: "Deck updated"
+      del_deck: "Deck deleted"
+    card:
+      new_card: "New card add"
+      del_card: "Card deleted"
+      update_card: "Card updated"
+      error_card: "Error!"
+
+    user:
+     new_user: "You are registered now!"
+     update_user: "Profile update"
+     not_auth: "Please login first"

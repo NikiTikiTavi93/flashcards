@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
         login(@user.email, params[:user][:password], false)
-        redirect_to root_path, :notice => "You are registered now!"
+        redirect_to root_path, :notice => t('flash_messages.user.reg_user')
     else
       render :new
     end
@@ -25,7 +25,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update_attributes(user_params)
-      redirect_to root_path, :notice => "Profile update"
+      redirect_to root_path, :notice => t('flash_messages.user.update_user')
     else
       render 'edit'
     end
