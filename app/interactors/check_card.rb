@@ -8,19 +8,31 @@ class CheckCard
     context.card = Card.find(context.card_id)
     if context.card.original_text == context.original_text.delete(' ')
       efactor_for_correct
+      timing(timer)
+      context.done = I18n.t('flash_messages.card.correct_card')+context.message
+      context.message =context.done
 
-      if timer >=5
-        context.message = I18n.t('flash_messages.card.correct_card')+"ДОЛГО ЕПТА"
-      end
     elsif mistype?
       efactor_for_mistype
-      context.message = "#{I18n.t('flash_messages.card.mistype_card')} #{context.card.original_text}"
+      timing(timer)
+      context.mistype = "#{I18n.t('flash_messages.card.mistype_card')} #{context.card.original_text}"+context.message
+      context.message = context.mistype
     else
       efactor_for_error
-      context.message = I18n.t('flash_messages.card.error_card')
+      context.alert = I18n.t('flash_messages.card.error_card')
+      context.message = context.alert
     end
   end
 
+  def timing(timer)
+    if timer > 10
+      context.message = "Очень долго"
+    elsif (timer>5)||(timer>=10)
+      context.message = "Неплохо!"
+    else
+      context.message = "Великолепно"
+    end
+  end
 
   def mistype?
     dl = DamerauLevenshtein.distance("#{context.card.original_text}", " #{context.original_text.delete(' ')}")

@@ -1,14 +1,17 @@
-<%= simple_form_for 'card', url: 'home#index', method: 'check' do |f| %>
+<%= semantic_form_for @card, url:{controller: 'home', action: 'check'} do |f| %>
     <%= f.input :original_text, input_html:{ :value => nil} %>
     <%= f.input :id, as: :hidden, value: @card.id %>
+    <%= f.input :timer, :as => :hidden, html: {id: :timer} %>
     <h2>
       <%= @card.translated_text %>
     </h2>
     <% if @card.image.nil? %>
       <%= image_tag @card.image.url(:medium) %>
     <% end %>
-    <%= f.button :submit, button_html: {class: "btn btn-lg btn-success btn-block" }  %>
+    <%= f.action :submit, button_html:{class: "btn btn-lg btn-success btn-block" }  %>
 <% end %>
+
+
 <script type="text/javascript">
     $( document ).ready(function() {
         var timer = 0;

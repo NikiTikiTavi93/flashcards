@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161122190958) do
+ActiveRecord::Schema.define(version: 20170102123521) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 20161122190958) do
     t.integer  "deck_id"
     t.float    "efactor",            default: 2.5
     t.integer  "counter",            default: 1
+    t.integer  "timer"
   end
 
   create_table "decks", force: :cascade do |t|

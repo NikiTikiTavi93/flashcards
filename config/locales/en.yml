@@ -20,6 +20,8 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  home:
+      nothing_check: "Nothing check"
   formtastic:
     labels:
       card:
