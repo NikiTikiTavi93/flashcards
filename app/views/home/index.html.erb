@@ -1,11 +1,11 @@
 <% if flash[:notice] %>
-    <div class='alert alert-success'>
+    <div class='alert alert-success' id = 'notice'>
       <% flash.each do |name, msg| -%>
           <%= content_tag :div, msg, class: name %>
       <% end -%>
     </div>
-    <% elsif flash[:alert]%>
-    <div class='alert alert-info alert-danger'>
+<% elsif flash[:alert]%>
+    <div class='alert alert-info alert-danger' id = 'notice'>
       <% flash.each do |name, msg| -%>
           <%= content_tag :div, msg, class: name %>
       <% end -%>
@@ -13,17 +13,16 @@
 <% end %>
 <div class="container">
   <div class="row">
-    <div class="col-md-5 col-md-push-3 text-center ">
+    <div class="col-md-5 col-md-push-3 text-center " id = 'form'>
       <div class="panel panel-default">
         <div class="panel-heading">
           <% unless @card.nil?%>
-            <%= render 'form' %>
-              <% else %>
-          <h3><%= t('home.nothing_check') %></h3>
+              <%= render 'form' %>
+          <% else %>
+              <h3><%= t('home.nothing_check') %></h3>
           <% end %>
         </div>
       </div>
     </div>
   </div>
 </div>
-

@@ -1,4 +1,4 @@
-<%= semantic_form_for @card, url:{controller: 'home', action: 'check'} do |f| %>
+<%= semantic_form_for @card, url:{controller: 'home', action: 'check'}, remote: true do |f| %>
     <%= f.input :original_text, input_html:{ :value => nil} %>
     <%= f.input :id, as: :hidden, value: @card.id %>
     <%= f.input :timer, :as => :hidden, html: {id: :timer} %>
@@ -10,8 +10,6 @@
     <% end %>
     <%= f.action :submit, button_html:{class: "btn btn-lg btn-success btn-block" }  %>
 <% end %>
-
-
 <script type="text/javascript">
     $( document ).ready(function() {
         var timer = 0;
