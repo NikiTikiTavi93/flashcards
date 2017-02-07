@@ -17,7 +17,8 @@ Rails.application.routes.draw do
   get "signup" => 'users#new', as: 'signup'
   post '/login' => 'sessions#new'
   patch 'home' => 'home#check'
-  post 'home' => 'home#check'
+  get 'home', to: 'home#index', defaults: { format: :json }
+  post 'home', to: 'home#check', defaults: { format: :json }
   post 'oauth/callback' => 'oauths#callback'
   get 'oauth/callbck' => 'oauths#callback'
   get 'oauth/:provider' => 'oauths#oauth', as: :auth_at_provider

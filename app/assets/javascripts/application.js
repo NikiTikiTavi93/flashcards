@@ -13,3 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+//= require vue
+//= require vue-router
+//= require vue-resource

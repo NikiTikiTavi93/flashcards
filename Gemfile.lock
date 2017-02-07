@@ -99,6 +99,11 @@ GEM
       formtastic (>= 3.0)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
+    gon (6.1.0)
+      actionpack (>= 3.0)
+      json
+      multi_json
+      request_store (>= 1.0)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
     http_accept_language (2.1.0)
@@ -206,6 +211,7 @@ GEM
     rb-fsevent (0.9.7)
     rb-inotify (0.9.7)
       ffi (>= 0.5.0)
+    request_store (1.3.2)
     rollbar (2.13.3)
       multi_json
     rspec-core (3.5.4)
@@ -269,6 +275,7 @@ GEM
       unf_ext
     unf_ext (0.0.7.2)
     unicode-display_width (1.1.1)
+    vuejs-rails (2.1.6)
     web-console (3.3.1)
       actionview (>= 5.0)
       activemodel (>= 5.0)
@@ -297,6 +304,7 @@ DEPENDENCIES
   factory_girl_rails
   formtastic (~> 3.0)
   formtastic-bootstrap
+  gon
   http_accept_language
   i18n
   interactor (~> 3.1)
@@ -323,6 +331,7 @@ DEPENDENCIES
   spring-watcher-listen (~> 2.0.0)
   tzinfo-data
   uglifier (>= 1.3.0)
+  vuejs-rails
   web-console
   whenever
 

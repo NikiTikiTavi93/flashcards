@@ -23,6 +23,8 @@ gem 'rails-i18n', '~> 5.0.0'
 gem 'rollbar'
 gem 'newrelic_rpm'
 gem 'mandrill-api'
+gem 'vuejs-rails'
+gem 'gon'
 # Use sqlite3 as the database for Active Record
 gem 'pg'
 # Use Puma as the app server
