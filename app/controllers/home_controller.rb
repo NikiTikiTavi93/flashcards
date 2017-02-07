@@ -17,7 +17,7 @@ class HomeController < ApplicationController
   end
 
   def check
-   checked_card = CheckCard.call(card_id: params[:id_card],
+   checked_card = CheckCard.call(card_id: params[:card_id],
                    original_text: params[:check_text],
                    timer: params[:timer])
    @notice = checked_card.message

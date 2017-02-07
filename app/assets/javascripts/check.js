@@ -20,7 +20,7 @@ $(document).ready(function(){
                 var self = this;
                 var check_data = {
                     check_text: self.check_text,
-                    id_card: self.card_id,
+                    card_id: self.card_id,
                     timer: self.timer - self.current_timer
                 }
                 this.$http.post('/home', check_data).then((responce)=> {
