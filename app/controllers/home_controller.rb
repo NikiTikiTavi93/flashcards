@@ -1,26 +1,33 @@
 class HomeController < ApplicationController
   def index
-    @card = GetRandomCard.call(user: current_user).card
+    result = GetRandomCard.call(user: current_user)
+    @card = result.card
+    if @card
+      gon.card_id = @card.id
+    else
+      gon.card_id = 0
+    end
+    respond_to do |format|
+      format.html
+      format.json { render json: { card: @card }}
+    end
   end
 
   def show
   end
 
   def check
-   checked_card = CheckCard.call(card_id: params[:card][:id],
-                   original_text: params[:card][:original_text],
-                   timer: params[:card][:timer])
+   checked_card = CheckCard.call(card_id: params[:id_card],
+                   original_text: params[:check_text],
+                   timer: params[:timer])
+   @notice = checked_card.message
    nominate = GetRandomCard.call(user: current_user)
-   if checked_card.message == checked_card.done
-       flash[:notice] =  checked_card.done
-   elsif checked_card.message == checked_card.mistype
-       flash[:notice]=checked_card.mistype
-   elsif checked_card.message = checked_card.alert
-       flash[:alert]=checked_card.alert
-   end
+
    @card =nominate.card
+
     respond_to do |format|
-      format.js
+      format.html
+      format.json { render json: { notice: @notice }}
     end
    # if checked_card.message == checked_card.done
    #   redirect_to root_path, :notice => checked_card.done
