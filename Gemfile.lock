@@ -57,11 +57,15 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    capybara-screenshot (1.0.14)
+      capybara (>= 1.0, < 3)
+      launchy
     childprocess (0.5.9)
       ffi (~> 1.0, >= 1.0.11)
     chronic (0.10.2)
     climate_control (0.0.3)
       activesupport (>= 3.0)
+    cliver (0.3.2)
     cocaine (0.5.8)
       climate_control (>= 0.0.3, < 1.0)
     coffee-rails (4.2.1)
@@ -120,6 +124,8 @@ GEM
       thor (>= 0.14, < 2.0)
     json (1.8.3)
     jwt (1.5.6)
+    launchy (2.4.3)
+      addressable (~> 2.3)
     listen (3.0.8)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -175,6 +181,10 @@ GEM
     parser (2.3.1.4)
       ast (~> 2.2)
     pg (0.18.4)
+    poltergeist (1.13.0)
+      capybara (~> 2.1)
+      cliver (~> 0.3.1)
+      websocket-driver (>= 0.2.0)
     powerpack (0.1.1)
     puma (3.6.0)
     rack (2.0.1)
@@ -297,6 +307,7 @@ DEPENDENCIES
   aws-sdk
   byebug
   capybara
+  capybara-screenshot
   coffee-rails (~> 4.2)
   damerau-levenshtein
   dotenv-rails
@@ -318,6 +329,7 @@ DEPENDENCIES
   overcommit (~> 0.36.0)
   paperclip (~> 5.0.0)
   pg
+  poltergeist
   puma (~> 3.0)
   rails (~> 5.0.0, >= 5.0.0.1)
   rails-i18n (~> 5.0.0)

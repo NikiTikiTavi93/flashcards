@@ -21,7 +21,7 @@ $(document).ready(function(){
                 var check_data = {
                     check_text: self.check_text,
                     card_id: self.card_id,
-                    timer: self.timer - self.current_timer
+                    timer:  self.current_timer - self.timer
                 }
                 this.$http.post('/home', check_data).then((responce)=> {
                     this.$http.get('/home').then((result) => {

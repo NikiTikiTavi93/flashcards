@@ -13,8 +13,8 @@ RSpec.describe 'home', type: :feature do
   end
   it "have text" do
     visit root_path
-    fill_in :card_original_text, with: @card.original_text
+    fill_in "original_text", with: @card.original_text
     click_button I18n.t('formtastic.actions.update')
-    expect(page).to have_content I18n.t('flash_messages.card.correct_card')
+    expect(page).to have_css('#notice')
   end
 end

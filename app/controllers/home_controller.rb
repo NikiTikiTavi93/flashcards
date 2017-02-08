@@ -1,4 +1,6 @@
 class HomeController < ApplicationController
+  skip_before_action :verify_authenticity_token, only: [:check]
+
   def index
     result = GetRandomCard.call(user: current_user)
     @card = result.card
