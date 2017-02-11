@@ -16,8 +16,8 @@ RSpec.describe Deck, type: :model do
       expect(deck.valid?).to be_falsey
     end
     it 'active  nil' do
-      deck = Deck.new(name:'asdf', active: nil)
-      expect(deck.valid?).to be_falsey
+      deck = Deck.new(name:'asdf', active: false)
+      expect(deck.active).to eq(false)
     end
   end
 

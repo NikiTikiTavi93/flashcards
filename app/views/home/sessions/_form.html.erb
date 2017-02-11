@@ -1,4 +1,4 @@
-<%= simple_form_for @user, url:{controller:'sessions' ,action:'create'} do |f| %>
+<%= simple_form_for @user, url: { controller:'sessions', action:'create' } do |f| %>
     <% if flash[:notice] %>
         <div class='alert alert-info alert-danger'>
           <% flash.each do |name, msg| -%>

@@ -1,4 +1,4 @@
-class HomeController < ApplicationController
+class Dashboard::HomeController < ApplicationController
   skip_before_action :verify_authenticity_token, only: [:check]
 
   def index
