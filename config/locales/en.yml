@@ -85,7 +85,8 @@ en:
       del_card: "Card deleted"
       update_card: "Card updated"
       error_card: "Error!"
-
+      correct_card: "Correct!"
+      mistype_card: "Mistype"
     user:
      new_user: "You are registered now!"
      update_user: "Profile update"
