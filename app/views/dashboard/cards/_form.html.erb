@@ -1,4 +1,4 @@
-<%= simple_form_for @card do |f| %>
+<%= simple_form_for @card, url: { controller: 'cards' } do |f| %>
     <% if flash[:notice] %>
         <div class='alert alert-info alert-danger'>
           <% for message in @card.errors.full_messages %>

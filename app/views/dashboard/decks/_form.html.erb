@@ -1,4 +1,4 @@
-<%= simple_form_for @deck do|f| %>
+<%= simple_form_for @deck, url:{ controller: 'decks' } do|f| %>
   <%= f.input :name %>
   <%= f.input :active, as: :radio_buttons %>
   <%= f.button :submit, class:"btn btn-lg btn-success btn-block" %>

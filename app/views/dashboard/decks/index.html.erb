@@ -19,8 +19,8 @@
         <td><%= deck.name %></td>
         <td><%= deck.active %></td>
 
-        <td><%= link_to t('all_decks.edit_deck'), edit_deck_path(deck) %></td>
-        <td><%= link_to t('all_decks.delete_deck'), deck_path(deck.id),
+        <td><%= link_to t('all_decks.edit_deck'), edit_dashboard_deck_path(deck) %></td>
+        <td><%= link_to t('all_decks.delete_deck'), dashboard_deck_path(deck.id),
                         method: :delete,
                         data: { confirm: t('all_decks.confirm') } %></td>
   <% end %>
