@@ -18,10 +18,10 @@ Rails.application.routes.draw do
 
   root "dashboard/home#index"
 
-  get "logout" => 'home/sessions#destroy', as: 'logout'
-  get "login" => 'home/sessions#new', as: 'login'
-  get "signup" => 'home/users#new', as: 'signup'
-  post '/login' => 'home/sessions#new'
+  get 'logout' => 'home/sessions#destroy', as: 'logout'
+  get 'login' => 'home/sessions#new', as: 'login'
+  get 'signup' => 'home/users#new', as: 'signup'
+  post 'login' => 'home/sessions#new'
   patch 'home' => 'home#check'
   get 'home', to: 'dashboard/home#index', defaults: { format: :json }
   post 'home', to: 'dashboard/home#check', defaults: { format: :json }
