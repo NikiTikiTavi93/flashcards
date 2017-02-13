@@ -37,7 +37,7 @@ class Dashboard::DecksController < ApplicationController
 
   def destroy
     @deck.destroy
-    redirect_to dashboard_decks_path, notice:  t('flash_messages.deck.del_deck')
+    redirect_to dashboard_decks_path, notice: t('flash_messages.deck.del_deck')
   end
 
 
