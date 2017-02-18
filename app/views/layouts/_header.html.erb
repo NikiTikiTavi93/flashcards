@@ -2,11 +2,11 @@
   <h1><%= link_to t('app.flashcards'), root_path %></h1>
 
   <ul class="nav nav-tabs">
-    <li role="presentation"><%= link_to t('app.all_cards'), cards_path %></li>
+    <li role="presentation"><%= link_to t('app.all_cards'), dashboard_cards_path %></li>
     <% if current_user %>
-    <li role="presentation"><%= link_to t('app.new_card'), new_card_path %></li>
-    <li role="presentation"><%= link_to t('app.new_deck'), new_deck_path %></li>
-    <li role="presentation"><%= link_to t('app.all_decks'), decks_path %></li>
+    <li role="presentation"><%= link_to t('app.new_card'), new_dashboard_card_path %></li>
+    <li role="presentation"><%= link_to t('app.new_deck'), new_dashboard_deck_path %></li>
+    <li role="presentation"><%= link_to t('app.all_decks'), dashboard_decks_path %></li>
         <li id="fat-menu" class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             <%= t('app.account') %>
@@ -14,7 +14,7 @@
           </a>
           <ul class="dropdown-menu">
             <li> <%= "#{t('app.logged')} #{current_user.email}"%><%  %></li>
-            <li><%= link_to t('app.settings'), edit_user_path(current_user) %></li>
+            <li><%= link_to t('app.settings'), edit_home_user_path(current_user) %></li>
             <li class="divider"></li>
             <li>
               <%= link_to t('app.log_out'), logout_path %>
