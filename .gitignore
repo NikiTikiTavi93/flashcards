@@ -6,6 +6,8 @@
 config/database.yml
 config/secrets.yml
 config/overcommit.yml
+config/provision/keys/id_rsa
+config/provision/keys/id_rsa.pub
 public/system/cards/images
 #config/rubocop.yml
 .idea
