@@ -25,7 +25,6 @@ gem 'newrelic_rpm'
 gem 'mandrill-api'
 gem 'vuejs-rails'
 gem 'gon'
-gem 'figaro'
 
 # Use sqlite3 as the database for Active Record
 gem 'pg'
