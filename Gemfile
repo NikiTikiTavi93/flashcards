@@ -25,6 +25,8 @@ gem 'newrelic_rpm'
 gem 'mandrill-api'
 gem 'vuejs-rails'
 gem 'gon'
+gem 'figaro'
+
 # Use sqlite3 as the database for Active Record
 gem 'pg'
 # Use Puma as the app server
@@ -53,7 +55,6 @@ gem 'jbuilder', '~> 2.5'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
-  gem 'capistrano', '~> 3.7'
 end
 
 group :development, :test do
