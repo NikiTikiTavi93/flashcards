@@ -39,7 +39,7 @@ class Dashboard::CardsController < ApplicationController
 
   private
     def current_user_card
-      @cards = current_user.cards
+      @cards = current_user.cards && Card.where(user_id: nil)
     end
     def set_current_card
       @card = Card.find(params[:id])
