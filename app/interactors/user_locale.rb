@@ -2,7 +2,7 @@ class UserLocale
   include Interactor
 
   def call
-    http_accept_language = context. http_accept_language
+    http_accept_language = context.http_accept_language
     user = context.user
     params = context.params
     session = context.session
