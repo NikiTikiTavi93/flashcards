@@ -37,14 +37,16 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     chef.add_recipe "ruby_build"
     chef.add_recipe "ruby_rbenv::user"
     chef.add_recipe "ruby_rbenv::user_install"
-    chef.add_recipe "vim"
     chef.add_recipe "postgresql::server"
-    chef.add_recipe "postgresql::client"
+    chef.add_recipe 'postgresql::client'
+    chef.add_recipe "pg_user"
+    chef.add_recipe "app_start"
 
     chef.json = {
+        app_start: {app_dir: '/vagrant/'},
         rbenv: {
             user_installs: [{
-                                user: 'admin',
+                                user: 'ubuntu',
                                 rubies: ["2.4.0"],
                                 global: "2.4.0",
                                 gems: {
@@ -58,20 +60,19 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
             }
         },
         postgresql: {
-            :pg_hba => [{
-                            :comment => "# Add vagrant role",
-                            :type => 'local', :db => 'all', :user => 'admin', :addr => nil, :method => 'trust'
-                        }],
-            :users => [{
+            enable_pgdg_yum: true,
+            version: '9.5',
+            password: {'postgres': 'postgres'},
+            users: [{
                            "username": "admin",
                            "password": "admin",
-                           "superuser": true,
-                           "replication": false,
-                           "createdb": true,
-                           "createrole": false,
-                           "inherit": false,
-                           "login": true
-                       }]
+                       }],
+            pg_hba: [
+                {type: 'local', db: 'all', user: 'postgres', addr: nil, method: 'ident'},
+                {type: 'local', db: 'all', user: 'all', addr: nil, method: 'md5'},
+                {type: 'host', db: 'all', user: 'all', addr: '127.0.0.1/32', method: 'md5'},
+                {type: 'host', db: 'all', user: 'all', addr: '::1/128', method: 'md5'}
+            ]
         }
     }
   end

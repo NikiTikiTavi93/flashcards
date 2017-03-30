@@ -26,3 +26,6 @@ public/system/cards/images
 
 # Ignore Byebug command history file.
 .byebug_history
+/cookbooks
+/.vagrant
+ubuntu-xenial-16.04-cloudimg-console.log

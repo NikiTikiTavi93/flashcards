@@ -1,0 +1,76 @@
+SITE
+  remote: http://community.opscode.com/api/v1
+  specs:
+    apt (6.0.1)
+    ark (2.2.1)
+      build-essential (>= 0.0.0)
+      seven_zip (>= 0.0.0)
+      windows (>= 0.0.0)
+    build-essential (8.0.0)
+      mingw (>= 1.1)
+      seven_zip (>= 0.0.0)
+    compat_resource (12.16.3)
+    cron (4.1.0)
+      compat_resource (>= 0.0.0)
+    homebrew (3.0.0)
+    hostsfile (2.4.5)
+    locale (2.0.1)
+    mingw (2.0.0)
+      seven_zip (>= 0.0.0)
+    nodejs (3.0.0)
+      apt (>= 2.9.1)
+      ark (>= 0.0.0)
+      build-essential (>= 0.0.0)
+      homebrew (>= 0.0.0)
+      yum-epel (>= 0.0.0)
+    ohai (5.0.2)
+    ruby_build (1.0.0)
+      yum-epel (>= 0.0.0)
+    seven_zip (2.0.2)
+      windows (>= 1.2.2)
+    system (0.11.2)
+      apt (>= 0.0.0)
+      cron (>= 0.0.0)
+      hostsfile (>= 0.0.0)
+    windows (3.0.2)
+      ohai (>= 4.0.0)
+    yum-epel (2.1.1)
+      compat_resource (>= 12.16.3)
+
+GIT
+  remote: https://github.com/ChowOps/chef-postgresql
+  ref: master
+  sha: d96c938e6ab18641b2bfced686fd3dc24320c857
+  specs:
+    postgresql (2.0.0)
+      locale (>= 0.0.0)
+
+GIT
+  remote: https://github.com/chef-rbenv/ruby_rbenv
+  ref: master
+  sha: 3593526610000fe473a1e2e6232fdd0a2777e9a9
+  specs:
+    ruby_rbenv (1.1.0)
+      ruby_build (>= 0.0.0)
+
+PATH
+  remote: ./site-cookbooks/app_start
+  specs:
+    app_start (0.0.1)
+
+PATH
+  remote: ./site-cookbooks/pg_user
+  specs:
+    pg_user (0.0.1)
+
+DEPENDENCIES
+  app_start (>= 0)
+  apt (>= 0)
+  build-essential (>= 0)
+  nodejs (>= 0)
+  pg_user (>= 0)
+  postgresql (>= 0)
+  ruby_build (>= 0)
+  ruby_rbenv (>= 0)
+  system (>= 0)
+
