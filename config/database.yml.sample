@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  username: admin
+  password: admin
+  encoding: utf8
+  pool: 8
+
+development:
+  <<: *default
+  database: flashcards_development
+
+test:
+  <<: *default
+  database: flashcards_test
+
+production:
+  <<: *default
+  database: flashcards_development
