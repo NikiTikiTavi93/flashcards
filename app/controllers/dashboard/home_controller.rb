@@ -26,20 +26,11 @@ class Dashboard::HomeController < ApplicationController
    nominate = GetRandomCard.call(user: current_user)
 
    @card =nominate.card
-
-    respond_to do |format|
-      format.html
-      format.json { render json: { notice: @notice }}
-    end
-   # if checked_card.message == checked_card.done
-   #   redirect_to root_path, :notice => checked_card.done
-   # elsif checked_card.message == checked_card.mistype
-   #   flash[:notice]=checked_card.message
-   #   redirect_to root_path, :notice => checked_card.mistype
-   # elsif checked_card.message = checked_card.alert
-   #   flash[:alert]=checked_card.alert
-   #   redirect_to root_path, :alert => checked_card.alert
+   respond_to do |format|
+     format.html
+     format.json { render json: { notice: @notice }}
    end
+  end
 
 
   private

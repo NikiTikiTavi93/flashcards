@@ -24,8 +24,12 @@ gem 'rollbar'
 gem 'newrelic_rpm'
 gem 'mandrill-api'
 gem 'vuejs-rails'
+gem "rails-erd"
 gem 'gon'
-
+gem 'bootstrap', '~> 4.0.0.alpha6'
+source 'https://rails-assets.org' do
+  gem 'rails-assets-tether', '>= 1.3.3'
+end
 # Use sqlite3 as the database for Active Record
 gem 'pg'
 # Use Puma as the app server
@@ -64,7 +68,7 @@ group :development, :test do
   gem 'fabrication'
   gem 'capybara-screenshot'
   gem 'poltergeist'
-
+  gem 'railroady'
 end
 
 group :development do

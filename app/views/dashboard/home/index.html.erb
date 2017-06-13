@@ -1,29 +1,41 @@
 <div id="flashcards">
-  <% if @card %>
-    <div v-if="original_text === 'not-initialized'">
-      <%= @card.translated_text %>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5 col-md-push-3 text-center">
+        <div class="panel panel-primary">
+          <div class="panel-heading panel-primary">
+              <h3>Проверьте свои навыки</h3>
+            </div>
+            <% if @card %>
+              <div v-if="original_text === 'not-initialized'">
+                <%= @card.translated_text %>
+              </div>
+              <div v-else-if="original_text != 'no_cards'">
+                <div class="alert alert-info" id = "notice">
+                  {{ notice }}
+                </div>
+                {{ original_text }}
+              </div>
+              <div v-else>
+                <div class="alert alert-info" id = "notice">
+                  {{ notice }}
+                </div>
+                <h3><%= t('home.nothing_check') %></h3>
+              </div>
+              <div v-if="original_text != 'no_cards'">
+                <%= t('formtastic.hints.card.original_text') %>
+                <input v-model='check_text' id = "original_text" class="form form-group"/>
+                <input v-model='card_id' type = 'hidden' />
+                <input v-model='timer' id = 'timer' type = 'hidden'/>
+                <input v-model='current_timer' type = 'hidden'/>
+                <button v-on:click="check_translate" id = 'check' class="btn btn-primary"><%= t('formtastic.actions.update')%></button>
+              </div>
+            <% else %>
+                <h3><%= t('home.nothing_check')%></h3>
+            <% end %>
+          </div>
+        </div>
     </div>
-    <div v-else-if="original_text != 'no_cards'">
-      <div class="alert alert-info" id = "notice">
-        {{ notice }}
-      </div>
-      {{ original_text }}
-    </div>
-    <div v-else>
-      <div class="alert alert-info" id = "notice">
-        {{ notice }}
-      </div>
-      <h3><%= t('home.nothing_check') %></h3>
-    </div>
-    <div v-if="original_text != 'no_cards'">
-      <%= t('formtastic.hints.card.original_text') %>
-      <input v-model='check_text' id = "original_text"/>
-      <input v-model='card_id' type = 'hidden'/>
-      <input v-model='timer' id = 'timer' type = 'hidden'/>
-      <input v-model='current_timer' type = 'hidden'/>
-      <button v-on:click="check_translate" id = 'check'><%= t('formtastic.actions.update')%></button>
-    </div>
-  <% else %>
-      <h3><%= t('home.nothing_check')%></h3>
-  <% end %>
+  </div>
 </div>

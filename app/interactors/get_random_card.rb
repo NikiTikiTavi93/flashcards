@@ -6,7 +6,7 @@ class GetRandomCard
     if user.decks.find_by(active: true)
       context.card = user.decks.active_deck.cards.random_card.first
     else
-      context.card = user.cards.random_card.first
+      context.card = Card.random_card.first
     end
   end
 end

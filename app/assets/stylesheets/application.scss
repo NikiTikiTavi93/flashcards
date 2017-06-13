@@ -12,11 +12,9 @@
  *
  *= require_tree .
  *= require_self
- */
-.hidden {
-    display: none;
-}
 
-.alert.alert-error > ul.error-list {
-    margin-bottom: 0px;
-}
+
+ */
+
+@import "bootstrap";
+

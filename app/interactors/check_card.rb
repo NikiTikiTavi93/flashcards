@@ -6,19 +6,19 @@ class CheckCard
     timer = context.timer.to_i
 
     context.card = Card.find(context.card_id)
-    if context.card.original_text == context.original_text.delete(' ')
-      efactor_for_correct
+    if context.card.original_text.strip == context.original_text.strip
+      efactor_for_correct(context.card)
       timing(timer)
-      context.done = I18n.t('flash_messages.card.correct_card')+context.message
-      context.message =context.done
-
+      context.done = I18n.t('flash_messages.card.correct_card') + context.message
+      context.message = context.done
     elsif mistype?
-      efactor_for_mistype
+      efactor_for_mistype(context.card)
       timing(timer)
-      context.mistype = "#{I18n.t('flash_messages.card.mistype_card')} #{context.card.original_text}"+context.message
+      context.mistype = "#{I18n.t('flash_messages.card.mistype_card')} #{context.card.original_text}"
+      + context.message
       context.message = context.mistype
     else
-      efactor_for_error
+      efactor_for_error(context.card)
       context.alert = I18n.t('flash_messages.card.error_card')
       context.message = context.alert
     end
@@ -27,7 +27,7 @@ class CheckCard
   def timing(timer)
     if timer > 10
       context.message = "Очень долго"
-    elsif (timer>5)||(timer>=10)
+    elsif (timer > 5) || (timer >= 10)
       context.message = "Неплохо!"
     else
       context.message = "Великолепно"
@@ -49,29 +49,29 @@ class CheckCard
     end
   end
 
-  def efactor_for_correct
-    context.card.efactor = calculate_efactor(5)
-    context.card.review_date = increase_interval
-    context.card.counter += 1
+  def efactor_for_correct(card)
+    card.efactor = calculate_efactor(5)
+    card.review_date = increase_interval
+    card.counter += 1
     update_card
   end
 
-  def efactor_for_mistype
-    context.card.efactor = calculate_efactor(3)
-    context.card.review_date = increase_interval
-    context.card.counter +=1
+  def efactor_for_mistype(card)
+    card.efactor = calculate_efactor(3)
+    card.review_date = increase_interval
+    card.counter +=1
     update_card
   end
 
-  def efactor_for_error
-    context.card.efactor = 2.5
-    context.card.counter = 1
-    context.card.review_date = DateTime.now
+  def efactor_for_error(card)
+    card.efactor = 2.5
+    card.counter = 1
+    card.review_date = DateTime.now
     update_card
   end
 
   def calculate_efactor(quality)
-    context.card.efactor = (context.card.efactor + (0.1 - (5-quality)*(0.08+(5-quality)*0.02)))
+    context.card.efactor = (context.card.efactor + (0.1 - (5 - quality) * (0.08 + (5 - quality) * 0.02)))
   end
 
   def increase_interval
